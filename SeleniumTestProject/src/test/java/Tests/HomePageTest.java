@@ -12,15 +12,15 @@ import org.testng.Assert;
 public class HomePageTest  {
 	private WebDriver driver;	
 	private HomePage homepage;
-    private SummitRegisterPage registerpage;
+    	private SummitRegisterPage registerpage;
     
     
     @BeforeMethod
     public void setUp() {
     	driver=new ChromeDriver(); //launch Chrome browser
-		driver.manage().window().maximize(); //Maximize the Chrome browser window
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)); //added wait to WebElements
-		driver.get("https://www.entrata.com/");//Navigate to website url
+	driver.manage().window().maximize(); //Maximize the Chrome browser window
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)); //added wait to WebElements
+	driver.get("https://www.entrata.com/");//Navigate to website url
         homepage = new HomePage(driver);
         registerpage = new SummitRegisterPage(driver);
         homepage.acceptCookies();
@@ -76,8 +76,8 @@ public class HomePageTest  {
 		
 		// Assertion to verify the input value
 		Assert.assertEquals(registerpage.getlastNameValue(),"Last Name");
-        Assert.assertEquals(registerpage.getCompanyValue(),"company Name");
-        Assert.assertEquals(registerpage.getEmailValue(), "Test@gmail.com");
+        	Assert.assertEquals(registerpage.getCompanyValue(),"company Name");
+        	Assert.assertEquals(registerpage.getEmailValue(), "Test@gmail.com");
         
     }
 }
